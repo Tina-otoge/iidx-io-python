@@ -9,6 +9,26 @@ from digitalio import DigitalInOut, Direction, Pull
 # from hid_gamepad import Gamepad
 from microcontroller import Pin
 
+BUTTONS_P1 = {
+    "SW1": "GPIO10",
+    "SW2": "GPIO13",
+    "SW3": "GPIO11",
+    "SW4": None,
+    "SW5": "GPIO12",
+    "SW6": "GPIO7",
+    "SW7": "GPIO8",
+}
+
+BUTTONS_P2 = {
+    "SW1": "GPIO13",
+    "SW2": "GPIO10",
+    "SW3": "GPIO9",
+    "SW4": "GPIO9",
+    "SW5": "GPIO7",
+    "SW6": "GPIO12",
+    "SW7": "GPIO11",
+}
+
 TIMER = 0.1
 
 led = digitalio.DigitalInOut(board.LED)
