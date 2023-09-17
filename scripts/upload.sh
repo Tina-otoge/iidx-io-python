@@ -1,3 +1,4 @@
 #!/bin/bash
 
-rsync -auP . /run/media/$USER/CIRCUITPY --exclude '.git'
+rm -rf /run/media/$USER/CIRCUITPY/{.*,*}
+cp -r ./circuitpython/* /run/media/$USER/CIRCUITPY/
