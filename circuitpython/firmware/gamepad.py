@@ -45,7 +45,7 @@ class Gamepad(Gamepad):
     def __init__(self, devices, mapping: dict, verbose: bool):
         super().__init__(devices)
         self.mapping_full = mapping
-        self.mapping = {}
+        self.mapping : dict[int, DigitalInOut] = {}
         self.verbose = verbose
         for key, pin in self.mapping_full.items():
             if not pin:
@@ -54,13 +54,13 @@ class Gamepad(Gamepad):
             pin = getattr(microcontroller.pin, pin)
             switch = DigitalInOut(pin)
             switch.direction = Direction.INPUT
-            switch.pull = Pull.DOWN
+            switch.pull = Pull.UP
             self.mapping[key] = switch
         self.last_state = {}
 
     def get_state(self):
         return {
-            button: switch.value
+            button: not switch.value
             for button, switch in self.mapping.items()
         }
 

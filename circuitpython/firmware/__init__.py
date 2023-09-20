@@ -7,10 +7,8 @@ from .gamepad import Gamepad
 from .pin_finder import PinFinder
 
 
-def boot():
+def init():
     usb_hid.enable((Gamepad.DEVICE,))
-    mapping = config.get_mapping()
-    print(mapping)
 
 
 def start(state: dict):

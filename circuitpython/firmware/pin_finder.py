@@ -21,14 +21,14 @@ class PinFinder:
                 print(e)
                 continue
             switch.direction = Direction.INPUT
-            switch.pull = Pull.DOWN
+            switch.pull = Pull.UP
             pins[name] = switch
         self.pins = pins
         self.last_state = {}
 
     def get_state(self):
         return {
-            pin: switch.value
+            pin: not switch.value
             for pin, switch in self.pins.items()
         }
 
