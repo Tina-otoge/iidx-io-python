@@ -56,6 +56,8 @@ class Gamepad(Gamepad):
             switch.direction = Direction.INPUT
             switch.pull = Pull.UP
             self.mapping[key] = switch
+            if self.verbose:
+                self.log(f"Bound button {key} to pin {pin}")
         self.last_state = {}
 
     def get_state(self):
