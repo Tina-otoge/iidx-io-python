@@ -1,6 +1,6 @@
 /.fseventsd/
 /.metadata_never_index
 /.vscode/
-/boot_out.txt
-/lib/*/
+boot_out.txt
+/circuitpython/lib/*/
 __pycache__/
